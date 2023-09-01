@@ -49,3 +49,4 @@ exchange-docs/
 src/main/resources/application-types.xml
 src/main/resources/weave/
 src/test/resources/sample_data/
+reports/
