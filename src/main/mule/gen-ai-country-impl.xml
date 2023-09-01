@@ -38,7 +38,7 @@ payload filter(lower($.name.common) contains
 output application/json
 ---
 payload filter($.population >= (
-	vars.queryParams.population as Number default 0
+	(vars.queryParams.population as Number default 0)*1000000
 )
 )]]></ee:set-payload>
 					</ee:message>
