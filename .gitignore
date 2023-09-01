@@ -46,3 +46,5 @@ target/
 .DS_Store
 velocity.log
 exchange-docs/
+src/main/resources/application-types.xml
+src/main/resources/weave/
