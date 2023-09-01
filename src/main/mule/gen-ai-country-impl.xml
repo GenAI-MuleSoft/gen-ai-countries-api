@@ -71,7 +71,7 @@ output application/json
 import slice from dw::core::Arrays
 ---
 slice(payload,(vars.queryParams.offset as Number - 1) default 0, 
-	((vars.queryParams.offset as Number -1) default 0) + (vars.queryParams.limit as Number default 0)
+	((vars.queryParams.offset as Number -1) default 0) + (vars.queryParams.limit as Number default (sizeOf(payload)-(vars.queryParams.offset as Number -1) default 0))
 )]]></ee:set-payload>
 					</ee:message>
 				</ee:transform>
