@@ -1,0 +1,40 @@
+#%RAML 1.0
+title: gen-ai-countries-api
+
+uses: 
+  Country: datatypes/country.raml
+
+/countries:
+  get:
+    queryParameters:
+      countryName:
+        type: string
+        required: false
+        pattern: "^(?!\\s*$).+"
+        example: "Ukraine"
+      population:
+        type: integer
+        required: false
+        minimum: 0
+        example: 10
+      sort:
+        type: string
+        enum: ["asc", "desc"]
+        required: false
+      offset:
+        type: integer
+        required: false
+        minimum: 1
+        example: 5
+      limit:
+        type: integer
+        required: false
+        minimum: 1
+        example: 5
+    responses:
+      200:
+        body:
+          application/json:
+            type: Country.Country[]
+            example: !include examples/countries.json
+            

@@ -1,0 +1,53 @@
+#%RAML 1.0 Library
+types:
+  Country:
+    properties:
+      name:
+        type: Name
+        required: true
+      independent:
+        type: boolean
+        required: true
+        example: true
+      unMember:
+        type: boolean
+        required: true
+        example: true
+      capital:
+        type: array
+        required: true
+        example: ["Kyiv"]
+      region:
+        type: string
+        required: true
+        example: "Europe"
+      subregion:
+        type: string
+        required: true
+        example: "Europe"
+      area:
+        type: number
+        required: true
+        example: 603700.00
+      population:
+        type: number
+        required: true
+        example: 43790000
+      timezones:
+        type: array
+        required: true
+        example: ["UTC+03:00"]
+      continents:
+        type: array
+        required: true
+        example: ["Europe"]  
+  Name:
+    properties:
+      common:
+        type: string
+        required: true
+        example: "Ukraine"
+      official:
+        type: string
+        required: true
+        example: "Ukraine"
