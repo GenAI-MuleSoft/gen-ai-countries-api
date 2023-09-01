@@ -2,6 +2,6 @@ http:
   port: "8081"
 
 restcountries:
-  host: "restcountries.com/v3.1"
+  host: "restcountries.com"
   protocol: "HTTPS"
   port: "443"
