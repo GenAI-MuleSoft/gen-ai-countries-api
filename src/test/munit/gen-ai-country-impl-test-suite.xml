@@ -33,7 +33,7 @@ output application/json
 {
     queryParams:{
 	    countryName: "Ukraine",
-	    population: 40,
+	    population: 100,
 	    sort: "asc",
 	    offset: 1,
 	    limit: 10	
@@ -66,6 +66,28 @@ output application/json
 				</munit-tools:with-attributes>
 			</munit-tools:verify-call>
 			<munit-tools:assert-equals doc:name="payload size is 1" doc:id="84001dcd-2184-476e-8ff9-e9feddb76711" actual="#[sizeOf(payload)]" expected="#[1]"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="gen-ai-country-impl-test-suite-getCountriesWithoutAttributesSubFlowTest" doc:id="362c8364-b27d-47f5-8645-9ebc41983a66" description="Test" >
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="restcountries reuest" doc:id="9ade2056-936b-453b-82d7-1ac00f56bec1" processor="http:request" >
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="GET" attributeName="method" />
+					<munit-tools:with-attribute whereValue="restcountries request" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="99360666-6d24-4da0-9c54-95f783bdc401" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="HTTP_Request_configuration" attributeName="config-ref" />
+					<munit-tools:with-attribute whereValue="/v3.1/all" attributeName="path" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return >
+					<munit-tools:payload value='#[[&#10;	{&#10;        "name": {&#10;            "common": "Ukraine",&#10;            "official": "Ukraine",&#10;            "nativeName": {&#10;                "ukr": {&#10;                    "official": "Україна",&#10;                    "common": "Україна"&#10;                }&#10;            }&#10;        },&#10;        "tld": [&#10;            ".ua",&#10;            ".укр"&#10;        ],&#10;        "cca2": "UA",&#10;        "ccn3": "804",&#10;        "cca3": "UKR",&#10;        "cioc": "UKR",&#10;        "independent": true,&#10;        "status": "officially-assigned",&#10;        "unMember": true,&#10;        "currencies": {&#10;            "UAH": {&#10;                "name": "Ukrainian hryvnia",&#10;                "symbol": "₴"&#10;            }&#10;        },&#10;        "idd": {&#10;            "root": "+3",&#10;            "suffixes": [&#10;                "80"&#10;            ]&#10;        },&#10;        "capital": [&#10;            "Kyiv"&#10;        ],&#10;        "altSpellings": [&#10;            "UA",&#10;            "Ukrayina"&#10;        ],&#10;        "region": "Europe",&#10;        "subregion": "Eastern Europe",&#10;        "languages": {&#10;            "ukr": "Ukrainian"&#10;        },&#10;        "landlocked": false,&#10;        "borders": [&#10;            "BLR",&#10;            "HUN",&#10;            "MDA",&#10;            "POL",&#10;            "ROU",&#10;            "RUS",&#10;            "SVK"&#10;        ],&#10;        "area": 603500.0,&#10;        "demonyms": {&#10;            "eng": {&#10;                "f": "Ukrainian",&#10;                "m": "Ukrainian"&#10;            },&#10;            "fra": {&#10;                "f": "Ukrainienne",&#10;                "m": "Ukrainien"&#10;            }&#10;        },&#10;        "flag": "🇺🇦",&#10;        "maps": {&#10;            "googleMaps": "https://goo.gl/maps/DvgJMiPJ7aozKFZv7",&#10;            "openStreetMaps": "https://www.openstreetmap.org/relation/60199"&#10;        },&#10;        "population": 44134693,&#10;        "gini": {&#10;            "2019": 26.6&#10;        },&#10;        "fifa": "UKR",&#10;        "car": {&#10;            "signs": [&#10;                "UA"&#10;            ],&#10;            "side": "right"&#10;        },&#10;        "timezones": [&#10;            "UTC+02:00"&#10;        ],&#10;        "continents": [&#10;            "Europe"&#10;        ],&#10;        "flags": {&#10;            "png": "https://flagcdn.com/w320/ua.png",&#10;            "svg": "https://flagcdn.com/ua.svg",&#10;            "alt": "The flag of Ukraine is composed of two equal horizontal bands of blue and yellow."&#10;        },&#10;        "coatOfArms": {&#10;            "png": "https://mainfacts.com/media/images/coats_of_arms/ua.png",&#10;            "svg": "https://mainfacts.com/media/images/coats_of_arms/ua.svg"&#10;        },&#10;        "startOfWeek": "monday",&#10;        "capitalInfo": {&#10;            "latlng": [&#10;                50.43,&#10;                30.52&#10;            ]&#10;        },&#10;        "postalCode": {&#10;            "format": "#####"&#10;        }&#10;    }&#10;]]' mediaType="application/java" encoding="UTF-8" />
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to getCountriesSubFlow" doc:id="a199dd94-0cf3-4ba3-96f5-e0739dd059bf" name="getCountriesSubFlow" />
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="payload size is 1" doc:id="86305722-c7db-4634-805f-6fc21b2fbce9" actual="#[sizeOf(payload)]" expected="#[1]" />
 		</munit:validation>
 	</munit:test>
 
