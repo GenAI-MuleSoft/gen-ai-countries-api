@@ -37,7 +37,7 @@ payload filter(lower($.name.common) contains
 						<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-payload filter($.population >= (
+payload filter($.population <= (
 	(vars.queryParams.population as Number default 0)*1000000
 )
 )]]></ee:set-payload>
