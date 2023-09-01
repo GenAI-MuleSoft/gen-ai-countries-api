@@ -1,6 +1,6 @@
 10:15 - started work
 
-Description
+Description:
 It is an API that returns information about countries. There are different data about them, such as name , population, area, currency etc.. Data can be filtered by country name and poulation.Also it can be sorted and paginated. API has only one endpoint, named /countries. Also it has 5 optional query parameters(countryName, population, sort, offset, limit). With query parameter countryName you can search for countries names that contains string from attributes (e.g., providing `st` as attribute you could find `Estonia`, providing `Sp` you could find `Spain`). With population query parameter you search for countries where the population is less than provided number from attributes in the millions of people (e.g., by providing value `10`, you should find countries with a population less than 10 million). Sort query parameter can take two values: "asc" and "desc". It sorts countries in descending or ascending order by their names.With offset and limit you can have pagination. 
 To run application locally you have to open Anypoint Studio and run it from there. Application would be run on port 8081. You also have
 to be sure that this port is free or otherwise set some other value for http.port.Than it will be possible to make a request to an app.
