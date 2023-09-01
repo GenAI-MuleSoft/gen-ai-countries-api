@@ -7,7 +7,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<sub-flow name="getCountriesSubFlow" doc:id="2f631b3e-7bb6-40a1-a64a-5c4312a4757c" >
 		<set-variable value="#[attributes.queryParams]" doc:name="queryParams" doc:id="c8f57d33-bb79-4b57-af01-35799078105a" variableName="queryParams"/>
-		<http:request method="GET" doc:name="restcountries request" doc:id="99360666-6d24-4da0-9c54-95f783bdc401" config-ref="HTTP_Request_configuration" path="/all"/>
+		<http:request method="GET" doc:name="restcountries request" doc:id="99360666-6d24-4da0-9c54-95f783bdc401" config-ref="HTTP_Request_configuration" path="/v3.1/all"/>
 		<flow-ref doc:name="filterByNameSubFlow" doc:id="4539f717-97d3-44da-8910-7b71bb8e2e4c" name="filterByNameSubFlow"/>
 		<flow-ref doc:name="filterByPopulationSubFlow" doc:id="a2aa2507-30a9-4e33-bfa6-d0dc557ac1b9" name="filterByPopulationSubFlow"/>
 		<flow-ref doc:name="sortByNameSubFlow" doc:id="3665c7cc-c56d-469d-a73b-bfc45062fb50" name="sortByNameSubFlow"/>
@@ -55,7 +55,7 @@ payload filter($.population >= (
 output application/json
 ---
 if(vars.queryParams.sort=="asc")payload orderBy $.name.common
-else payload orderBy -$.name.common]]></ee:set-payload>
+else (payload orderBy $.name.common)[-1 to 0]]]></ee:set-payload>
 					</ee:message>
 				</ee:transform>
 			</when>
