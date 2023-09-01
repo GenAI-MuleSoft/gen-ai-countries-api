@@ -70,8 +70,8 @@ else (payload orderBy $.name.common)[-1 to 0]]]></ee:set-payload>
 output application/json
 import slice from dw::core::Arrays
 ---
-slice(payload,vars.queryParams.offset as Number default 0, 
-	vars.queryParams.limit as Number default 0
+slice(payload,(vars.queryParams.offset as Number - 1) default 0, 
+	((vars.queryParams.offset as Number -1) default 0) + (vars.queryParams.limit as Number default 0)
 )]]></ee:set-payload>
 					</ee:message>
 				</ee:transform>
