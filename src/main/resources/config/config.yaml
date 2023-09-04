@@ -5,3 +5,5 @@ restcountries:
   host: "restcountries.com"
   protocol: "HTTPS"
   port: "443"
+  
+api_autodiscovery_id: "12345"
