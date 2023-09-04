@@ -1,0 +1,32 @@
+How to link API asset in Exchange with latest version of API in Runtime?
+ChatGPT
+If you're referring to linking an API asset in MuleSoft's Anypoint Exchange with the latest version of an API in Anypoint Runtime Manager, follow the steps below:
+
+Prerequisites:
+Anypoint Platform Account: Ensure you have an account on Anypoint Platform.
+API in Exchange: Ensure that you have published the API to Anypoint Exchange.
+Deployed API: The API should be deployed in the Anypoint Runtime Manager.
+Linking the API:
+Login to Anypoint Platform: Go to the Anypoint Platform (https://anypoint.mulesoft.com) and log in.
+
+Navigate to Anypoint Runtime Manager: Once logged in, click on the "Runtime Manager" option.
+
+Select the API: In Runtime Manager, navigate to the "Applications" tab and find your API that you've already deployed.
+
+Manage API: Once you've found your API, click on "Manage API" button or link.
+
+Link to API in Exchange:
+
+You'll be presented with a form where you can link the API in Runtime Manager to the asset in Exchange.
+Choose "API in Exchange" from the dropdown.
+Find and select the version of the API you published in Anypoint Exchange.
+Once selected, ensure you choose the right SLA Tier (if applicable) and set up any other required settings.
+Save: Click on the "Save" button to link the API.
+
+Monitoring and Managing: Once linked, you can leverage API Manager capabilities like monitoring, applying policies, and viewing analytics for your API.
+
+Additional Tips:
+If you make changes to the API and want to publish a new version in Exchange, ensure you maintain version consistency. This helps in understanding the versions and linkage.
+Always test the API once it's deployed and linked to ensure everything is working as expected.
+Leverage API Manager's capabilities fully to enhance the security, performance, and observability of your APIs.
+Remember, the exact steps may vary slightly based on the version of the Anypoint Platform you're using or any new features or changes introduced after my last update in September 2021. Always refer to the official MuleSoft documentation or seek assistance from MuleSoft's support channels if in doubt.
